@@ -48,11 +48,21 @@ const convertMetersToCentimeters = () => {
 const circleRadius = () => {
     let radius = parseFloat(readline.question("Enter the circle radius: "));
 
-    let circleArea = Math.PI * (radius * radius);
-    let circlePerimeter = 2 * Math.PI * radius;
+    if (isNaN(radius) || radius <= 0) {
+        console.log("Please enter a valid number.");
+        return;
+    }
 
-    console.log(`Area of the circle: ${circleArea}`);
-    console.log(`Perimeter of the circle: ${circlePerimeter}`);
+    const circleData = {
+        area: Math.PI * (radius * radius),
+        perimeter: 2 * Math.PI * radius
+    }
+
+    console.log(`Area of the circle: ${circle.area}`);
+    console.log(`Perimeter of the circle: ${circle.perimeter}`);
+
+    // return the object, in case you need to use the data elsewhere
+    return circleData;
 }
 
 // Exportando todas as funções
