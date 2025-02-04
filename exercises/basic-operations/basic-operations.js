@@ -46,7 +46,7 @@ const convertMetersToCentimeters = () => {
 };
 
 const circleRadius = () => {
-    let radius = parseFloat(readline.question("Enter the circle radius: "));
+    const radius = parseFloat(readline.question("Enter the circle radius: "));
 
     if (isNaN(radius) || radius <= 0) {
         console.log("Please enter a valid number.");
@@ -64,6 +64,16 @@ const circleRadius = () => {
     // return the object, in case you need to use the data elsewhere
     return circleData;
 }
+
+const squareAreaAndDouble = () => {
+    const squareHeight = parseInt(readline.question("Enter the square height: "));
+
+    const squareArea = squareHeight * squareHeight;
+    const doubledArea = squareArea * 2;
+
+    console.log(`The doubled area of the square is: ${doubledArea}`);
+}
+
 
 // Exportando todas as funções
 module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius };
