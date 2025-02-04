@@ -43,6 +43,17 @@ const convertMetersToCentimeters = () => {
 
     let centimeters = meters * 100;
     console.log(`The convertion result: ${centimeters} cm`);
+};
+
+const circleRadius = () => {
+    let radius = parseFloat(readline.question("Enter the circle radius: "));
+
+    let circleArea = Math.PI * (radius * radius);
+    let circlePerimeter = 2 * Math.PI * radius;
+
+    console.log(`Area of the circle: ${circleArea}`);
+    console.log(`Perimeter of the circle: ${circlePerimeter}`);
 }
+
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters };
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius };
