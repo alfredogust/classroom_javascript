@@ -76,4 +76,4 @@ const squareAreaAndDouble = () => {
 
 
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius };
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble };
