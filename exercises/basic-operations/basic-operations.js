@@ -33,5 +33,16 @@ const gradeAverage = () => {
     console.log(`The average grade is: ${average.toFixed(2)}`);
 };
 
+const convertMetersToCentimeters = () => {
+    let meters = parseFloat(readline.question("Enter a number in meters: "));
+
+    if (isNaN(meters)) {
+        console.log("Please enter a valid number.");
+        return;
+    }
+
+    let centimeters = meters * 100;
+    console.log(`The convertion result: ${centimeters} cm`);
+}
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage };
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters };
