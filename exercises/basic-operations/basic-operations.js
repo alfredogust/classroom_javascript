@@ -74,6 +74,17 @@ const squareAreaAndDouble = () => {
     console.log(`The doubled area of the square is: ${doubledArea}`);
 }
 
+const calculateSalary = () => {
+    const hourlyWage = parseFloat(readline.question("Enter your hourly wage: "));
+    const hoursWorked = parseFloat(readline.question("Enter the number of hours worked this month: "));
+
+    if (isNaN(hourlyWage) || isNaN(hoursWorked) || hourlyWage <= 0 || hoursWorked <= 0) {
+        console.log("Please enter valid numbers.");
+    }
+
+    const monthlySalary = hourlyWage * hoursWorked;
+    console.log(`Your salary for this month is: $${monthlySalary.toFixed(2)}`);
+}
 
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble };
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary };
