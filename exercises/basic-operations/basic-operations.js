@@ -86,5 +86,17 @@ const calculateSalary = () => {
     console.log(`Your salary for this month is: $${monthlySalary.toFixed(2)}`);
 }
 
+const fahrenheitToCelsius = () => {
+    const fahrenheit = parseFloat(readline.question("Enter the temperature in fahrenheit: "));
+
+    if (isNaN(fahrenheit)) {
+        console.log("Please, enter a valid number.");
+        return;
+    }
+
+    const celsius = 5 * ((fahrenheit - 32) / 9);
+    console.log(`Temperature in Celsius: ${celsius.toFixed(2)}`);
+}
+
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary };
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius };
