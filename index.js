@@ -1,7 +1,7 @@
 // index.js - Centralizing the function calls for all exercises
 
 // Importing functions from the exercises file
-const { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary } = require("./exercises/basic-operations/basic-operations");
+const { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius } = require("./exercises/basic-operations/basic-operations");
 
 const runExercises = () => {
     console.log("Exercises in execution now:\n");
@@ -13,7 +13,8 @@ const runExercises = () => {
     //convertMetersToCentimeters();
     //circleRadius();
     //squareAreaAndDouble();
-    calculateSalary();
+    //calculateSalary();
+    fahrenheitToCelsius();
 };
 
 runExercises();
