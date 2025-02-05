@@ -98,5 +98,17 @@ const fahrenheitToCelsius = () => {
     console.log(`Temperature in Celsius: ${celsius.toFixed(2)}`);
 }
 
+const   celsiusToFahrenheit = () => {
+    const celsius = parseFloat(readline.question("Enter the temperature in celsius: "));
+
+    if (isNaN(celsius)) {
+        console.log("Please, enter a valid number.");
+        return;
+    }
+
+    const fahrenheit = celsius * 1.8 + 32;
+    console.log(`Temperature in Fahrenheit: ${fahrenheit.toFixed(2)}`);
+}
+
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius };
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit };
