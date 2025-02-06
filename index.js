@@ -2,8 +2,8 @@
 
 // Importing functions from the exercises file
 const { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters,
-    circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit } = require("./exercises/basic-operations/basic-operations");
-
+    circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit,
+    calculateThreeNumbers } = require("./exercises/basic-operations/basic-operations");
 const runExercises = () => {
     console.log("Exercises in execution now:\n");
 
@@ -16,7 +16,8 @@ const runExercises = () => {
     //squareAreaAndDouble();
     //calculateSalary();
     //fahrenheitToCelsius();
-    celsiusToFahrenheit();
+    //celsiusToFahrenheit();
+    calculateThreeNumbers();
 };
 
 runExercises();
