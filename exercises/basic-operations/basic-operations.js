@@ -112,27 +112,16 @@ const   celsiusToFahrenheit = () => {
 
 const calculateThreeNumbers = () => {
 
-    const numbers = [];
-
-    for (let i=0; i<2; i++) {
-        numbers.push(parseInt(readline.question(`Enter the ${i+1}º number:`)));
-    }
-    numbers.push(parseFloat(readline.question("Enter a real number: ")));
-
-    const first = numbers[0];
-    const second = numbers[1];
-    const third= numbers[2]
-
-    const result = {
-        productDoubleFirstHalfSecond: (2 * first) * (second / 2),
-        sumTripleFirstWithThird: (3 * first) + third,
-        thirdCubed: Math.pow(third , 3) 
-    }
+    const [first, second] = [
+        parseInt(readline.question("Enther th 1st integer: "), 10),
+        parseInt(readline.question("Enter the 2nd integer: "), 10)
+    ]
+    const third = parseFloat(readline.question("Enter a real number: "));
     
     console.log("\nResults:");
-    console.log(`Product of double the first with half the second: ${result.productDoubleFirstHalfSecond.toFixed(2)}`);
-    console.log(`Sum of triple the first with the third: ${result.sumTripleFirstWithThird.toFixed(2)}`);
-    console.log(`The third number cubed: ${result.thirdCubed.toFixed(2)}`);
+    console.log(`Product of double the first with half the second: ${(2 * first * (second / 2)).toFixed(2)}`);
+    console.log(`Sum of triple the first with the third: ${(3 * first + third).toFixed(2)}`);
+    console.log(`The third number cubed: ${Math.pow(third, 3).toFixed(2)}`);
 }
 
 // Exportando todas as funções
