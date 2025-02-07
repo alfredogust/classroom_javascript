@@ -133,7 +133,7 @@ const calculateIdealWeight = () => {
     }
 
     idealWeight = (72.7 * height) - 58
-    console.log(`Your ideal weight is: ${idealWeight}`);
+    console.log(`Your ideal weight is: ${idealWeight.toFixed(2)}`);
     
 }
 
