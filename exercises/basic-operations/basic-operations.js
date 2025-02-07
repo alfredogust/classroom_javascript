@@ -124,5 +124,18 @@ const calculateThreeNumbers = () => {
     console.log(`The third number cubed: ${Math.pow(third, 3).toFixed(2)}`);
 }
 
+const calculateIdealWeight = () => {
+    const height = parseFloat(readline.question("Enter your height(in meters): "));
+
+    if (isNaN(height) || height < 0) {
+        console.log("Please, enter a valid number.");
+        return;
+    }
+
+    idealWeight = (72.7 * height) - 58
+    console.log(`Your ideal weight is: ${idealWeight}`);
+    
+}
+
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers};
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight};
