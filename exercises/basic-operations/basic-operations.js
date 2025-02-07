@@ -137,5 +137,23 @@ const calculateIdealWeight = () => {
     
 }
 
+const getIdealWeightByGender = () => {
+    const height = parseFloat(readline.question("Enter your height: "));
+
+    if (isNaN(height) || height < 0) {
+        console.log("Please, enter a valid height.");
+        return;
+    }
+
+    const idealWeights  = {
+        male: (72.7 * height) - 58,
+        female: (62.1 * height) - 44.7
+    }
+
+    console.log(`Ideal weight for male is ${idealWeights.male.toFixed(2)}`);
+    console.log(`Ideal weight for female is ${idealWeights.female.toFixed(2)}`);
+    
+}
+
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight};
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender};
