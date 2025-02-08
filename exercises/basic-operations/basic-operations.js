@@ -155,5 +155,24 @@ const getIdealWeightByGender = () => {
     
 }
 
+const calculateExcessWeight = () => {
+    const fishWeight = parseFloat(readline.question("Enter the total weight of fish caught today (kg): "));
+
+    const limit = 50.0;
+    const finePerKilo = 4.0;
+
+    if (fishWeight <= limit)  {
+        console.log("No fines, weight limit not exceeded.");
+        return;
+    }
+
+    const excessWeight = fishWeight - limit;
+    const fineAmount = excessWeight * finePerKilo;
+
+    console.log(`Excess weight: ${excessWeight.toFixed(2)} kg`);
+    console.log(`Fine amount: $${fineAmount.toFixed(2)}`);
+};
+
+
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender};
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender, calculateExcessWeight};
