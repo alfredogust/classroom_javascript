@@ -3,7 +3,7 @@
 // Importing functions from the exercises file
 const { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters,
     circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit,
-    calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender } = require("./exercises/basic-operations/basic-operations");
+    calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender, calculateExcessWeight } = require("./exercises/basic-operations/basic-operations");
 const runExercises = () => {
     console.log("Exercises in execution now:\n");
 
@@ -19,7 +19,8 @@ const runExercises = () => {
     //celsiusToFahrenheit();
     //calculateThreeNumbers();
     //calculateIdealWeight();
-    getIdealWeightByGender();
+    //getIdealWeightByGender();
+    calculateExcessWeight();
 };
 
 runExercises();
