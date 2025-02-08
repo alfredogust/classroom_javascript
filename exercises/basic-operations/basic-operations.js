@@ -173,6 +173,26 @@ const calculateExcessWeight = () => {
     console.log(`Fine amount: $${fineAmount.toFixed(2)}`);
 };
 
+const salaryDiscount = () => {
+    const hourlyWage = parseFloat(readline.question("Enter how much you earn per hour: "));
+    const hoursWorked = parseFloat(readline.question("Enter the number of hours worked: "));
+
+    const grossSalary = hourlyWage * hoursWorked;
+
+    const deductions = {
+        incomeTax: grossSalary * 11 / 100,
+        socialSecurity: grossSalary * 8 / 100,
+        unionFee: grossSalary * 5 / 100
+    }
+
+    const netSalary = grossSalary - (deductions.incomeTax + deductions.socialSecurity + deductions.unionFee);
+
+    console.log(`Gross salary: ${grossSalary}`);
+    console.log(`You paid to Social Security: ${deductions.socialSecurity.toFixed(2)}`);
+    console.log(`You paid to the union: ${deductions.unionFee.toFixed(2)}`);
+    console.log(`Net salary: ${netSalary.toFixed(2)}`);
+};
+
 
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender, calculateExcessWeight};
+module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender, calculateExcessWeight, salaryDiscount};
