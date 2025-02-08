@@ -180,19 +180,46 @@ const salaryDiscount = () => {
     const grossSalary = hourlyWage * hoursWorked;
 
     const deductions = {
-        incomeTax: grossSalary * 11 / 100,
-        socialSecurity: grossSalary * 8 / 100,
-        unionFee: grossSalary * 5 / 100
+        incomeTax: 11,
+        socialSecurity: 8,
+        unionFee: 5
     }
 
-    const netSalary = grossSalary - (deductions.incomeTax + deductions.socialSecurity + deductions.unionFee);
+    const calculatedDeductions = {};
 
-    console.log(`Gross salary: ${grossSalary}`);
-    console.log(`You paid to Social Security: ${deductions.socialSecurity.toFixed(2)}`);
-    console.log(`You paid to the union: ${deductions.unionFee.toFixed(2)}`);
-    console.log(`Net salary: ${netSalary.toFixed(2)}`);
+    Object.keys(deductions).forEach((key) => {
+        calculatedDeductions[key] = (grossSalary * deductions[key]) / 100;
+    });
+
+    const netSalary = grossSalary - (
+        calculatedDeductions.incomeTax +
+        calculatedDeductions.socialSecurity +
+        calculatedDeductions.unionFee
+    );
+
+    console.log(`Gross salary: $${grossSalary.toFixed(2)}`);
+    console.log(`Income Tax: $${calculatedDeductions.incomeTax.toFixed(2)}`);
+    console.log(`Social Security: $${calculatedDeductions.socialSecurity.toFixed(2)}`);
+    console.log(`Union Fee: $${calculatedDeductions.unionFee.toFixed(2)}`);
+    console.log(`Net salary: $${netSalary.toFixed(2)}`);
 };
 
 
 // Exportando todas as funções
-module.exports = { helloWorld, informedNumber, sumTwoNumbers, gradeAverage, convertMetersToCentimeters, circleRadius, squareAreaAndDouble, calculateSalary, fahrenheitToCelsius, celsiusToFahrenheit, calculateThreeNumbers, calculateIdealWeight, getIdealWeightByGender, calculateExcessWeight, salaryDiscount};
+module.exports = { 
+    helloWorld, 
+    informedNumber, 
+    sumTwoNumbers, 
+    gradeAverage, 
+    convertMetersToCentimeters, 
+    circleRadius, 
+    squareAreaAndDouble, 
+    calculateSalary, 
+    fahrenheitToCelsius, 
+    celsiusToFahrenheit, 
+    calculateThreeNumbers, 
+    calculateIdealWeight, 
+    getIdealWeightByGender, 
+    calculateExcessWeight, 
+    salaryDiscount 
+};
