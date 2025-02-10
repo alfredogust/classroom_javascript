@@ -204,6 +204,19 @@ const salaryDiscount = () => {
     console.log(`Net salary: $${netSalary.toFixed(2)}`);
 };
 
+const calculatePaintCost = () => {
+    const areaToBePainted = parseFloat(readline.question("Enter the area to be painted in square meters: "));
+
+    const paintRequiredInLiters = areaToBePainted / 3;
+
+    const totalCansRequired = Math.ceil(paintRequiredInLiters / 18);
+
+    const pricePerCan = 80;
+    const totalCost = totalCansRequired * pricePerCan;
+
+    console.log(`Total cost for paint: R$ ${totalCost.toFixed(2)}`);
+};
+
 
 // Exportando todas as funções
 module.exports = { 
@@ -221,5 +234,6 @@ module.exports = {
     calculateIdealWeight, 
     getIdealWeightByGender, 
     calculateExcessWeight, 
-    salaryDiscount 
+    salaryDiscount,
+    calculatePaintCost 
 };
