@@ -212,7 +212,7 @@ const calculatePaintCost = () => {
     console.log(`Total cost for paint: R$ ${totalCost.toFixed(2)}`);
 };
 
-const calculateCansCost = () => {
+const calculatePaintCosts = () => {
     const areaToBePainted = parseFloat(readline.question("Enter the area to be painted in square meters: "));
 
     const necessaryLiters = (areaToBePainted / 6) * 1.1;
@@ -253,5 +253,6 @@ module.exports = {
     getIdealWeightByGender, 
     calculateExcessWeight, 
     salaryDiscount,
-    calculatePaintCost 
+    calculatePaintCost,
+    calculatePaintCosts 
 };
