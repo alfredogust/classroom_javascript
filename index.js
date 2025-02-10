@@ -18,7 +18,8 @@ const {
     calculateExcessWeight,
     salaryDiscount, 
     calculatePaintCost,
-    calculatePaintCosts
+    calculatePaintCosts,
+    calculateDownloadTime
 
   } = require("./exercises/basic-operations/basic-operations");
 
@@ -41,7 +42,8 @@ const runExercises = () => {
     //calculateExcessWeight();
     //salaryDiscount();
     //calculatePaintCost();
-    calculatePaintCosts();
+    //calculatePaintCosts();
+    calculateDownloadTime();
 };
 
 runExercises();
