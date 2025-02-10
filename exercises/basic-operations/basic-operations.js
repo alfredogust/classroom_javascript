@@ -215,25 +215,36 @@ const calculatePaintCost = () => {
 const calculatePaintCosts = () => {
     const areaToBePainted = parseFloat(readline.question("Enter the area to be painted in square meters: "));
 
-    const necessaryLiters = (areaToBePainted / 6) * 1.1;
+    const necessaryLiters = (areaToBePainted / 6) * 1.1;  // Consider 10% extra
 
-    const necessaryCans = Math.ceil(necessaryLiters / 18);
+    // Using only cans (18L)
+    const necessaryCans = Math.ceil(necessaryLiters / 18);  // Arredondar para cima, já que não podemos comprar uma fração de lata
     const cansCost = necessaryCans * 80;
 
-    const necessaryGallons = Math.ceil(necessaryLiters / 3.6);
+    // Using only gallons (3.6L)
+    const necessaryGallons = Math.ceil(necessaryLiters / 3.6);  // Arredondar para cima, já que não podemos comprar uma fração de galão
     const gallonsCost = necessaryGallons * 25;
 
-    // Cálculo da mistura
-    let mixedCans = Math.floor(necessaryLiters / 18); // Usa latas inteiras
-    let remainingLiters = necessaryLiters - mixedCans * 18; // Calcula os litros restantes
+    // Mixing cans and gallons
+    let mixedCans = Math.floor(necessaryLiters / 18);  // Use full cans first (arredondar para baixo)
+    let remainingLiters = necessaryLiters - (mixedCans * 18);  // Subtrair a tinta coberta pelas latas
 
-    const mixedGallons = Math.ceil(remainingLiters / 3.6); // Arredonda para cima os galões necessários para o restante
-    const mixedCost = (mixedCans * 80) + (mixedGallons * 25);
+    // Calcular os galões necessários para cobrir o restante da tinta
+    let mixedGallons = Math.ceil(remainingLiters / 3.6);  // Usar galões para a tinta restante
+
+    if (mixedGallons * 25 > 80) {
+        mixedCans += 1;
+        mixedGallons = 0;
+    }
+
+    const mixedCost = (mixedCans * 80) + (mixedGallons * 25);  // Calcular o custo da mistura
 
     console.log(`Using only cans (18L): ${necessaryCans} cans, Total cost: R$ ${cansCost.toFixed(2)}`);
     console.log(`Using only gallon (3,6L): ${necessaryGallons} gallons, Total cost: R$ ${gallonsCost.toFixed(2)}`);
     console.log(`Using mixed cans and gallons: ${mixedCans} cans and ${mixedGallons} gallons, Total cost: R$ ${mixedCost.toFixed(2)}`);
-}
+};
+
+
 
 
 // Exportando todas as funções
