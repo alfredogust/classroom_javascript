@@ -212,6 +212,20 @@ const calculatePaintCost = () => {
     console.log(`Total cost for paint: R$ ${totalCost.toFixed(2)}`);
 };
 
+const calculateCansCost = () => {
+    const areaToBePainted = parseFloat(readline.question("Enter the area to be painted in square meters: "));
+
+    const necessaryLiters = (areaToBePainted / 6) * 1.1;
+
+    const necessaryCans = Math.ceil(necessaryLiters / 18);
+    const cansCost = necessaryCans * 80;
+
+    const necessaryGallons = Math.ceil(necessaryLiters / 3.6);
+    const gallonsCost = necessaryGallons * 25;
+
+    console.log(`Using only cans (18L): ${necessaryCans} cans, Total cost: R$ ${cansCost.toFixed(2)}`);
+    console.log(`Using only gallon (3,6L): ${necessaryGallons} gallons, Total cost: R$ ${gallonsCost.toFixed(2)}`)
+}
 
 // Exportando todas as funções
 module.exports = { 
