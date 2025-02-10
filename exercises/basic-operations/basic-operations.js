@@ -244,6 +244,22 @@ const calculatePaintCosts = () => {
     console.log(`Using mixed cans and gallons: ${mixedCans} cans and ${mixedGallons} gallons, Total cost: R$ ${mixedCost.toFixed(2)}`);
 };
 
+const calculateDownloadTime = () => {
+    const fileSizeMB = parseFloat(readline.question("Enter the arquive size in MB: "));
+    const internetSpeedMbps = parseFloat(readline.question("Enter the speed in Mbps: "));
+
+    if (isNaN(fileSizeMB) || fileSizeMB <= 0 || isNaN(internetSpeedMbps) || internetSpeedMbps <= 0) {
+        console.log("Please enter valid values greater than zero.");
+        return;
+    }
+
+    const fileSizeMb = fileSizeMB * 8;
+    const downloadTimeSeconds = fileSizeMb / internetSpeedMbps;
+    const downloadTimeMinutes = downloadTimeSeconds / 60;
+
+    console.log(`The download time is approximately ${downloadTimeMinutes.toFixed(2)} minutes.`);
+};
+
 
 
 
@@ -265,5 +281,6 @@ module.exports = {
     calculateExcessWeight, 
     salaryDiscount,
     calculatePaintCost,
-    calculatePaintCosts 
+    calculatePaintCosts,
+    calculateDownloadTime 
 };
