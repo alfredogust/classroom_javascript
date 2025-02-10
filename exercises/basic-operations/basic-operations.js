@@ -207,12 +207,7 @@ const salaryDiscount = () => {
 const calculatePaintCost = () => {
     const areaToBePainted = parseFloat(readline.question("Enter the area to be painted in square meters: "));
 
-    const paintRequiredInLiters = areaToBePainted / 3;
-
-    const totalCansRequired = Math.ceil(paintRequiredInLiters / 18);
-
-    const pricePerCan = 80;
-    const totalCost = totalCansRequired * pricePerCan;
+    const totalCost = Math.ceil(areaToBePainted / 3 / 18) * 80;
 
     console.log(`Total cost for paint: R$ ${totalCost.toFixed(2)}`);
 };
