@@ -223,9 +223,18 @@ const calculateCansCost = () => {
     const necessaryGallons = Math.ceil(necessaryLiters / 3.6);
     const gallonsCost = necessaryGallons * 25;
 
+    // Cálculo da mistura
+    let mixedCans = Math.floor(necessaryLiters / 18); // Usa latas inteiras
+    let remainingLiters = necessaryLiters - mixedCans * 18; // Calcula os litros restantes
+
+    const mixedGallons = Math.ceil(remainingLiters / 3.6); // Arredonda para cima os galões necessários para o restante
+    const mixedCost = (mixedCans * 80) + (mixedGallons * 25);
+
     console.log(`Using only cans (18L): ${necessaryCans} cans, Total cost: R$ ${cansCost.toFixed(2)}`);
-    console.log(`Using only gallon (3,6L): ${necessaryGallons} gallons, Total cost: R$ ${gallonsCost.toFixed(2)}`)
+    console.log(`Using only gallon (3,6L): ${necessaryGallons} gallons, Total cost: R$ ${gallonsCost.toFixed(2)}`);
+    console.log(`Using mixed cans and gallons: ${mixedCans} cans and ${mixedGallons} gallons, Total cost: R$ ${mixedCost.toFixed(2)}`);
 }
+
 
 // Exportando todas as funções
 module.exports = { 
