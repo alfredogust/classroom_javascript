@@ -1,0 +1,180 @@
+## 1. Tamanho de Strings
+
+**Descrição:** Faça um programa que leia 2 strings e informe o conteúdo delas seguido do seu comprimento. Informe também se as duas strings possuem o mesmo comprimento e são iguais ou diferentes no conteúdo.
+
+**Exemplo:**
+String 1: Brasil Hexa 2006
+String 2: Brasil! Hexa 2006!
+Tamanho de "Brasil Hexa 2006": 16 caracteres
+Tamanho de "Brasil! Hexa 2006!": 18 caracteres
+As duas strings são de tamanhos diferentes.
+As duas strings possuem conteúdo diferente.
+
+Copy
+
+## 2. Nome ao Contrário em Maiúsculas
+
+**Descrição:** Faça um programa que permita ao usuário digitar o seu nome e em seguida mostre o nome do usuário de trás para frente utilizando somente letras maiúsculas.
+
+**Exemplo:**
+Nome: Fulano
+Resultado: ONALUF
+
+Copy
+
+## 3. Nome na Vertical
+
+**Descrição:** Faça um programa que solicite o nome do usuário e imprima-o na vertical.
+
+**Exemplo:**
+Nome: Fulano
+Resultado:
+F
+U
+L
+A
+N
+O
+
+Copy
+
+## 4. Nome na Vertical em Escada
+
+**Descrição:** Modifique o programa anterior de forma a mostrar o nome em formato de escada.
+
+**Exemplo:**
+Nome: Fulano
+Resultado:
+F
+FU
+FUL
+FULA
+FULAN
+FULANO
+
+Copy
+
+## 5. Nome na Vertical em Escada Invertida
+
+**Descrição:** Altere o programa anterior de modo que a escada seja invertida.
+
+**Exemplo:**
+Nome: Fulano
+Resultado:
+FULANO
+FULAN
+FULA
+FUL
+FU
+F
+
+Copy
+
+## 6. Data por Extenso
+
+**Descrição:** Faça um programa que solicite a data de nascimento (dd/mm/aaaa) do usuário e imprima a data com o nome do mês por extenso.
+
+**Exemplo:**
+Data de Nascimento: 29/10/1973
+Você nasceu em 29 de Outubro de 1973.
+
+Copy
+
+## 7. Conta Espaços e Vogais
+
+**Descrição:** Dado uma string com uma frase informada pelo usuário (incluindo espaços em branco), conte:
+- Quantos espaços em branco existem na frase.
+- Quantas vezes aparecem as vogais a, e, i, o, u.
+
+**Exemplo:**
+Frase: O rato roeu a roupa do rei de Roma.
+Espaços em branco: 8
+Vogais: a: 5, e: 3, i: 1, o: 4, u: 2
+
+Copy
+
+## 8. Palíndromo
+
+**Descrição:** Um palíndromo é uma sequência de caracteres cuja leitura é idêntica se feita da direita para esquerda ou vice-versa. Faça um programa que leia uma sequência de caracteres, mostre-a e diga se é um palíndromo ou não.
+
+**Exemplo:**
+Frase: SUBI NO ONIBUS
+Resultado: É um palíndromo.
+
+Copy
+
+## 9. Verificação de CPF
+
+**Descrição:** Desenvolva um programa que solicite a digitação de um número de CPF no formato xxx.xxx.xxx-xx e indique se é um número válido ou inválido através da validação dos dígitos verificadores e dos caracteres de formatação.
+
+**Exemplo:**
+CPF: 123.456.789-09
+Resultado: CPF válido.
+
+Copy
+
+## 10. Número por Extenso
+
+**Descrição:** Escreva um programa que solicite ao usuário a digitação de um número até 99 e imprima-o na tela por extenso.
+
+**Exemplo:**
+Número: 42
+Resultado: quarenta e dois
+
+Copy
+
+## 11. Jogo de Forca
+
+**Descrição:** Desenvolva um jogo da forca. O programa terá uma lista de palavras lidas de um arquivo texto e escolherá uma aleatoriamente. O jogador poderá errar 6 vezes antes de ser enforcado.
+
+**Exemplo:**
+Digite uma letra: A
+-> Você errou pela 1ª vez. Tente de novo!
+
+Digite uma letra: O
+A palavra é: _ _ _ _ O
+
+Digite uma letra: E
+A palavra é: _ E _ _ O
+
+Digite uma letra: S
+-> Você errou pela 2ª vez. Tente de novo!
+
+Copy
+
+## 12. Valida e Corrige Número de Telefone
+
+**Descrição:** Faça um programa que leia um número de telefone, e corrija o número no caso deste conter somente 7 dígitos, acrescentando o '3' na frente. O usuário pode informar o número com ou sem o traço separador.
+
+**Exemplo:**
+Telefone: 461-0133
+Telefone possui 7 dígitos. Vou acrescentar o digito três na frente.
+Telefone corrigido sem formatação: 34610133
+Telefone corrigido com formatação: 3461-0133
+
+Copy
+
+## 13. Jogo da Palavra Embaralhada
+
+**Descrição:** Desenvolva um jogo em que o usuário tenha que adivinhar uma palavra que será mostrada com as letras embaralhadas. O programa terá uma lista de palavras lidas de um arquivo texto e escolherá uma aleatoriamente. O jogador terá seis tentativas para adivinhar a palavra. Ao final a palavra deve ser mostrada na tela, informando se o usuário ganhou ou perdeu o jogo.
+
+**Exemplo:**
+Palavra embaralhada: OLVHO
+Digite sua tentativa: OLHOV
+Resultado: Você acertou!
+
+Copy
+
+## 14. Leet Speak Generator
+
+**Descrição:** Leet é uma forma de se escrever o alfabeto latino usando outros símbolos em lugar das letras, como números por exemplo. Faça um programa que peça um texto e transforme-o para a grafia leet speak.
+
+**Exemplo:**
+Texto: Leet Speak
+Resultado: 1337 5p34k
+
+Copy
+
+---
+
+Sinta-se à vontade para explorar os exercícios e contribuir com melhorias ou novas soluções!
