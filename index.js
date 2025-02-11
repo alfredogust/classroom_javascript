@@ -20,10 +20,9 @@ const {
     calculatePaintCost,
     calculatePaintCosts,
     calculateDownloadTime
-
   } = require("./exercises/basic-operations/basic-operations");
 
-const runExercises = () => {
+const runExercisesBasicOperations = () => {
     console.log("Exercises in execution now:\n");
 
     //helloWorld();
@@ -43,7 +42,18 @@ const runExercises = () => {
     //salaryDiscount();
     //calculatePaintCost();
     //calculatePaintCosts();
-    calculateDownloadTime();
+    //calculateDownloadTime();
 };
 
-runExercises();
+const {
+  sizeOfStrings
+} = require("./exercises/strings-operations/strings");
+
+const runExercisesStringsOperations = () => {
+  console.log("Exercises in execution now:\n");
+
+  sizeOfStrings()
+};
+
+//runExercisesBasicOperations();
+runExercisesStringsOperations();
