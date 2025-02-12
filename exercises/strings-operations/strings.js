@@ -26,7 +26,19 @@ const reverseName = () => {
     console.log(`${reversedName.toUpperCase()}`);
 }
 
+const verticalName = () => {
+    const name = readlineSync.question("Enter your name: ");
+
+    const dividedName = name.split('');
+
+    for (let i=0; i < dividedName.length; i++) {
+        console.log(dividedName[i]);
+    }
+
+}
+
 module.exports = {
     sizeOfStrings,
-    reverseName
+    reverseName, 
+    verticalName
 };
