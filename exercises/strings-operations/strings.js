@@ -30,15 +30,28 @@ const verticalName = () => {
     const name = readlineSync.question("Enter your name: ");
 
     const dividedName = name.split('');
+    const acc = [];
 
     for (let i=0; i < dividedName.length; i++) {
-        console.log(dividedName[i]);
+        acc.push(dividedName[i]);
+        console.log(acc.join(''));
     }
+};
 
-}
+const invertedVerticalName = () => {
+    const name = readlineSync.question("Enter your name: ");
+
+    let currentName = name;
+
+    for (let i = name.length; i > 0; i--) {
+        console.log(currentName);
+        currentName = currentName.slice(0, -1);
+    }
+};
 
 module.exports = {
     sizeOfStrings,
     reverseName, 
-    verticalName
+    verticalName,
+    invertedVerticalName
 };
