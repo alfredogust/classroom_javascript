@@ -49,9 +49,38 @@ const invertedVerticalName = () => {
     }
 };
 
+const getFullMonthName = () => {
+    const birthDate = readlineSync.question("Enter your birth date in the format (mm/dd/yyyy): ");
+    const dateParts = birthDate.split("/");
+
+    const monthNumber = parseInt(dateParts[0]);
+
+    const months = [
+        "January",    
+        "February",   
+        "March",      
+        "April",      
+        "May",        
+        "June",       
+        "July",       
+        "August",     
+        "September",  
+        "October",    
+        "November",   
+        "December"    
+    ];
+
+    const correctMonthIndex = monthNumber - 1;
+    const monthName = months[correctMonthIndex];
+
+    console.log(`Birth date: ${birthDate}`);
+    console.log(`You were born on ${monthName} ${dateParts[1]}, ${dateParts[2]}`);
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
     verticalName,
-    invertedVerticalName
+    invertedVerticalName,
+    getFullMonthName
 };
