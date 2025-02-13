@@ -49,7 +49,8 @@ const {
   sizeOfStrings,
   reverseName,
   verticalName,
-  invertedVerticalName
+  invertedVerticalName,
+  getFullMonthName
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -58,7 +59,8 @@ const runExercisesStringsOperations = () => {
   //sizeOfStrings(),
   //reverseName(),
   //verticalName(),
-  invertedVerticalName()
+  //invertedVerticalName(),
+  getFullMonthName()
 };
 
 //runExercisesBasicOperations();
