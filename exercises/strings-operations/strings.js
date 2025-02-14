@@ -77,10 +77,39 @@ const getFullMonthName = () => {
     console.log(`You were born on ${monthName} ${dateParts[1]}, ${dateParts[2]}`);
 };
 
+const countSpacesAndVowels = () => {
+    const sentence = "O rato roeu a roupa do rei de Roma.";
+
+    let spacesFound = 0;
+
+    const vowelCounter = {
+        a: 0,
+        e: 0,
+        i: 0,
+        o: 0,
+        u: 0
+    };
+
+    for (let i = 0; i < sentence.length; i++) {
+        const lowercaseChar = sentence[i].toLowerCase();
+
+        if (lowercaseChar === ' ') {
+            spacesFound++;
+        } else if (vowelCounter.hasOwnProperty(lowercaseChar)) {
+            vowelCounter[lowercaseChar]++;
+        }
+    }
+
+    console.log(`Sentence: ${sentence}`);
+    console.log(`Spaces: ${spacesFound}`);
+    console.log(`Vowels: a: ${vowelCounter.a}, e: ${vowelCounter.e}, i: ${vowelCounter.i}, o: ${vowelCounter.o}, u: ${vowelCounter.u}`);
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
     verticalName,
     invertedVerticalName,
-    getFullMonthName
+    getFullMonthName,
+    countSpacesAndVowels
 };
