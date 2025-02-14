@@ -118,6 +118,31 @@ const palindrome = () => {
     }
 };
 
+const checkCpf = () => {
+    const cpfNumber = readlineSync.question("Enter your CPF in the following format:xxx.xxx.xxx-xx: ");
+
+    if (cpfNumber.length !== 14) {
+        console.log("Invalid CPF: the format must be xxx.xxx.xxx-xx.")
+        return;
+    }
+
+    if (cpfNumber[3] !== '.' || cpfNumber[7] !== '.' || cpfNumber[11] !== '-') {
+        console.log("Invalid CPF: the formatting characters are incorrect.");
+        return;
+    }
+
+    for (let i = 0; i < cpfNumber.length; i++) {
+        if (i !== 3 & i !== 7 && i !== 11) {
+            if (isNaN(cpfNumber[i])) {
+                console.log("Invalid CPF: all characters, except dots and dasha, must be numbers.");
+                return;
+            }
+        }
+    }
+
+    console.log("Valid CPF: the format is correct.")
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
@@ -125,5 +150,6 @@ module.exports = {
     invertedVerticalName,
     getFullMonthName,
     countSpacesAndVowels,
-    palindrome
+    palindrome,
+    checkCpf
 };
