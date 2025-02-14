@@ -50,7 +50,9 @@ const {
   reverseName,
   verticalName,
   invertedVerticalName,
-  getFullMonthName
+  getFullMonthName,
+  countSpacesAndVowels,
+  palindrome
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -60,7 +62,9 @@ const runExercisesStringsOperations = () => {
   //reverseName(),
   //verticalName(),
   //invertedVerticalName(),
-  getFullMonthName()
+  //getFullMonthName(),
+  //countSpacesAndVowels(),
+  palindrome()
 };
 
 //runExercisesBasicOperations();
