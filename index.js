@@ -52,7 +52,8 @@ const {
   invertedVerticalName,
   getFullMonthName,
   countSpacesAndVowels,
-  palindrome
+  palindrome,
+  checkCpf
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -64,7 +65,8 @@ const runExercisesStringsOperations = () => {
   //invertedVerticalName(),
   //getFullMonthName(),
   //countSpacesAndVowels(),
-  palindrome()
+  //palindrome(),
+  checkCpf()
 };
 
 //runExercisesBasicOperations();
