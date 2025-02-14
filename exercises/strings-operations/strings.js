@@ -105,11 +105,25 @@ const countSpacesAndVowels = () => {
     console.log(`Vowels: a: ${vowelCounter.a}, e: ${vowelCounter.e}, i: ${vowelCounter.i}, o: ${vowelCounter.o}, u: ${vowelCounter.u}`);
 };
 
+const palindrome = () => {
+    const characterSequence = readlineSync.question("Enter a word or phrase: ");
+
+    const treatedSequence = characterSequence.replace(/[^a-zA-Z]/g, '').toLocaleLowerCase();
+    const reversedSequence = treatedSequence.split('').reverse().join('');
+
+    if (treatedSequence === reversedSequence) {
+        console.log("It's a palindrome!");
+    } else {
+        console.log("It's not a palindrome.");
+    }
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
     verticalName,
     invertedVerticalName,
     getFullMonthName,
-    countSpacesAndVowels
+    countSpacesAndVowels,
+    palindrome
 };
