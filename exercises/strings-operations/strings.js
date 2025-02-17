@@ -1,4 +1,5 @@
 const readlineSync = require('readline-sync');
+const fs = require('fs');
 
 const sizeOfStrings = () => {
     const string01 = "Brasil Hexa 2006";
@@ -178,6 +179,76 @@ const numberToWords = () => {
     console.log(`Result: ${result}`);
 };
 
+const hangmanGame = () => {
+    const filePath = './words.txt'; // Path to the file containing the words
+
+    try {
+        // 1. Read the file content and load the words
+        const content = fs.readFileSync(filePath, 'utf-8'); // Reads the file in UTF-8 format
+        const words = content.split('\n').map(word => word.trim()); // Splits the words by line and removes extra spaces
+        const word = words[Math.floor(Math.random() * words.length)]; // Randomly selects a word from the list
+        let correctLetters = []; // List that will store the correct letters guessed by the player
+        let errors = 0; // Counter for incorrect attempts
+        const maxAttempts = 6; // The maximum number of incorrect guesses before the player loses the game
+
+        // Function to show the word with the guessed letters and remaining letters as '_'
+        const displayWord = () => {
+            let currentState = '';
+            // Loop through each letter in the word to check if it was guessed correctly
+            for (let i = 0; i < word.length; i++) {
+                if (correctLetters.includes(word[i])) {
+                    currentState += word[i] + ' '; // Display the letter if it was guessed correctly
+                } else {
+                    currentState += '_ '; // Display '_' if the letter has not been guessed
+                }
+            }
+            console.log('Word: ' + currentState.trim()); // Display the word with the correctly guessed letters and the remaining ones
+        };
+
+        // Function to check if the player's guessed letter is in the word
+        const checkLetter = (letter) => {
+            return word.includes(letter); // Returns true if the letter is in the word
+        };
+
+        console.log('Welcome to Hangman Game!');
+
+        // Main game loop where the player has up to 6 attempts
+        while (errors < maxAttempts) {
+            displayWord(); // Shows the current state of the word with guessed letters
+            const letter = readlineSync.question("Enter a letter: ").toLowerCase();
+            
+            // Check if the player entered a valid letter
+            if (letter.length !== 1 || !/[a-z]/.test(letter)) {
+                console.log('Please, enter a valid letter!');
+                continue; // Ask the player to try again if the input is invalid
+            }
+            
+            // Check if the entered letter is in the word
+            if (checkLetter(letter)) {
+                correctLetters.push(letter); // Add the correct letter to the list of guessed letters
+                console.log('Good! The letter is in the word.');
+            } else {
+                errors++; // Increment the error counter if the letter is not in the word
+                console.log(`-> You made your ${errors}th mistake. Try again!`);
+            }
+
+            // Check if the player has guessed all the letters in the word
+            if (correctLetters.length === new Set(word.split('')).size) {
+                console.log('Congratulations, you guessed the word!');
+                displayWord(); // Display the complete word
+                break; // End the game when the player guesses the word
+            }
+        }
+
+        // If the player reached the maximum errors, they lose the game
+        if (errors === maxAttempts) {
+            console.log('You lost! The word was: ' + word);
+        }
+    } catch (err) {
+        console.error('Error reading the file: ', err); // Handle any errors that may occur while reading the file
+    }
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
@@ -187,5 +258,6 @@ module.exports = {
     countSpacesAndVowels,
     palindrome,
     checkCpf,
-    numberToWords
+    numberToWords,
+    hangmanGame
 };
