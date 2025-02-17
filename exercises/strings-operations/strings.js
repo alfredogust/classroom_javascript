@@ -265,6 +265,36 @@ const validateAndCorrectPhoneNumber = () => {
     }
 };
 
+const scrambledWordGame = () => {
+    const words = fs.readFileSync('scrambledWords.txt', 'utf-8').split('\n');
+
+    const chosenWord = words[Math.floor(Math.random() * words.length)];
+
+    function scrambleWord(word) {
+        return word.split('').sort(() => Math.random() - 0.5).join('');
+    }
+
+    const scrambledWord = scrambleWord(chosenWord);
+    console.log(`Scrambled word: ${scrambledWord}`);
+
+    let attempts = 6;
+    while (attempts > 0) {
+        const guess = readlineSync.question('Enter your guess: ');
+        if (guess == chosenWord) {
+            console.log('You guessed it right!');
+            break;
+        } else {
+            attempts--;
+            console.log(`You missed! You have ${attempts} attempts left.`);
+        }
+    }
+
+    if (attempts === 0) {
+        console.log(`You lost! The word was: ${chosenWord}`);
+    }
+};
+
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
@@ -276,5 +306,6 @@ module.exports = {
     checkCpf,
     numberToWords,
     hangmanGame,
-    validateAndCorrectPhoneNumber
+    validateAndCorrectPhoneNumber,
+    scrambledWordGame
 };
