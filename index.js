@@ -53,7 +53,9 @@ const {
   getFullMonthName,
   countSpacesAndVowels,
   palindrome,
-  checkCpf
+  checkCpf,
+  numberToWords,
+  hangmanGame
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -66,7 +68,9 @@ const runExercisesStringsOperations = () => {
   //getFullMonthName(),
   //countSpacesAndVowels(),
   //palindrome(),
-  checkCpf()
+  //checkCpf(),
+  //numberToWords,
+  hangmanGame()
 };
 
 //runExercisesBasicOperations();
