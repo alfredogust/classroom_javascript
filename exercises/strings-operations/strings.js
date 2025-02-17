@@ -143,6 +143,41 @@ const checkCpf = () => {
     console.log("Valid CPF: the format is correct.")
 };
 
+const numberToWords = () => {
+    const number = parseInt(readlineSync.question("Enter a number from 1 to 99: "));
+
+    if (number < 1 || number > 99) {
+        console.log("Specified number out of interval.");
+        return;
+    }
+
+    const numbersInWords = [
+        "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+        "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+    ];
+
+    if (number >= 1 &&  number <= 19) {
+        console.log(`Number: ${number}`);
+        console.log(`Result: ${numbersInWords[number]}`);
+        return;
+    }
+
+    const tensInWords = [
+        "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+    ];
+
+    let tens = Math.floor(number / 10);
+    let units = number % 10;
+
+    let result = tensInWords[tens];
+    if (units !== 0) {
+        result += ` and ${numbersInWords[units]}`
+    }
+
+    console.log(`Number: ${number}`);
+    console.log(`Result: ${result}`);
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
@@ -151,5 +186,6 @@ module.exports = {
     getFullMonthName,
     countSpacesAndVowels,
     palindrome,
-    checkCpf
+    checkCpf,
+    numberToWords
 };
