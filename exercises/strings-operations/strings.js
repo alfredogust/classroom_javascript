@@ -249,6 +249,22 @@ const hangmanGame = () => {
     }
 };
 
+const validateAndCorrectPhoneNumber = () => {
+    const phoneNumber = readlineSync.question("Enter the phone number: ");
+    const formattedPhoneNumber = phoneNumber.replace('-', '');
+
+    console.log(`Phone Number: ${phoneNumber}`);
+    if (formattedPhoneNumber.length === 7) {
+        console.log(`The phone number has 7 digits. I'll add the digit 3 in front.`);
+
+        const correctedNumber = '3' + formattedPhoneNumber;
+        console.log(`Corrected phone number without formatting: ${correctedNumber}`);
+
+        const formattedCorrectedNumber = correctedNumber.slice(0, 4) + '-' + correctedNumber.slice(4);
+        console.log(`Corrected phone number with formatting: ${formattedCorrectedNumber}`);
+    }
+};
+
 module.exports = {
     sizeOfStrings,
     reverseName, 
@@ -259,5 +275,6 @@ module.exports = {
     palindrome,
     checkCpf,
     numberToWords,
-    hangmanGame
+    hangmanGame,
+    validateAndCorrectPhoneNumber
 };
