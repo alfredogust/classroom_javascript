@@ -56,7 +56,8 @@ const {
   checkCpf,
   numberToWords,
   hangmanGame,
-  validateAndCorrectPhoneNumber
+  validateAndCorrectPhoneNumber,
+  scrambledWordGame
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -71,8 +72,9 @@ const runExercisesStringsOperations = () => {
   //palindrome(),
   //checkCpf(),
   //numberToWords,
-  //hangmanGame().
-  validateAndCorrectPhoneNumber()
+  //hangmanGame(),
+  //validateAndCorrectPhoneNumber(),
+  scrambledWordGame()
 };
 
 //runExercisesBasicOperations();
