@@ -57,7 +57,8 @@ const {
   numberToWords,
   hangmanGame,
   validateAndCorrectPhoneNumber,
-  scrambledWordGame
+  scrambledWordGame,
+  leetSpeak
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -74,7 +75,8 @@ const runExercisesStringsOperations = () => {
   //numberToWords,
   //hangmanGame(),
   //validateAndCorrectPhoneNumber(),
-  scrambledWordGame()
+  //scrambledWordGame(),
+  leetSpeak()
 };
 
 //runExercisesBasicOperations();
