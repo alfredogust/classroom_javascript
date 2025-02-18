@@ -294,6 +294,29 @@ const scrambledWordGame = () => {
     }
 };
 
+const convertToLeetSpeak = () => {
+    const inputText = readlineSync.question("Enter a text: ").toUpperCase();
+
+    const leetDictionary = new Map([
+        ['A', '4'], ['B', '8'], ['C', '('], ['D', '|)'], ['E', '3'],
+        ['F', '|='], ['G', '6'], ['H', '#'], ['I', '!'], ['J', '_|'],
+        ['K', '|<'], ['L', '1'], ['M', '|\\/|'], ['N', '|\\|'], ['O', '0'],
+        ['P', '|°'], ['Q', '(,)'], ['R', '|2'], ['S', '$'], ['T', '7'],
+        ['U', '|_|'], ['V', '\\/'], ['W', '\\/\\/'], ['X', '><'], ['Y', '¥'],
+        ['Z', '2']
+    ]);
+
+    const characters = inputText.split('');
+
+    const leetifiedText = characters.map(char => {
+        return leetDictionary.has(char) ? leetDictionary.get(char) : char;
+    });
+
+    const resultText = leetifiedText.join('');
+    console.log(`Leet Speak: ${resultText}`);
+};
+
+
 
 module.exports = {
     sizeOfStrings,
@@ -307,5 +330,6 @@ module.exports = {
     numberToWords,
     hangmanGame,
     validateAndCorrectPhoneNumber,
-    scrambledWordGame
+    scrambledWordGame,
+    leetSpeak
 };
