@@ -80,11 +80,13 @@ const runExercisesStringsOperations = () => {
 };
 
 const {
-  gradeValidator
+  gradeValidator,
+  userAndPasswordValidator
 } = require("./exercises/repetition-structure-01/repetition-structures-list");
 
 const runExercisesRepetitionStructureOperations = () => {
-  gradeValidator()
+  //gradeValidator(), 
+  userAndPasswordValidator()
 }
 
 //runExercisesBasicOperations();
