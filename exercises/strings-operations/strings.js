@@ -331,5 +331,5 @@ module.exports = {
     hangmanGame,
     validateAndCorrectPhoneNumber,
     scrambledWordGame,
-    leetSpeak
+    convertToLeetSpeak
 };
