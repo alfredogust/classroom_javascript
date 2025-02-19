@@ -19,8 +19,11 @@ const userAndPasswordValidator = () => {
     const MAX_ATTEMPTS = 3;
 
     for (let attemptCount = 0; attemptCount < MAX_ATTEMPTS; attemptCount++) {
+        const remainingAttempts = MAX_ATTEMPTS - attemptCount;
+        console.log(`You have ${remainingAttempts} attempt(s) remaining.`);
+
         const userName = readlineSync.question("Enter your username: ");
-        const password = readlineSync.question("Enter your password: ");
+        const password = readlineSync.question("Enter your password: ", { hideEchoBack: true });
 
         if (userName !== password) {
             console.log("Sucess.");
