@@ -15,6 +15,26 @@ const gradeValidator = () => {
     }
 };
 
+const userAndPasswordValidator = () => {
+    const MAX_ATTEMPTS = 3;
+
+    for (let attemptCount = 0; attemptCount < MAX_ATTEMPTS; attemptCount++) {
+        const userName = readlineSync.question("Enter your username: ");
+        const password = readlineSync.question("Enter your password: ");
+
+        if (userName !== password) {
+            console.log("Sucess.");
+            break;
+        } else {
+            console.log("Invalid atempt. The username must be different from password.");
+            if (attemptCount === MAX_ATTEMPTS - 1) {
+                console.log("BLOCKED ACCESS.")
+            }
+        }
+    }
+};
+
 module.exports = {
-    gradeValidator
+    gradeValidator,
+    userAndPasswordValidator
 }
