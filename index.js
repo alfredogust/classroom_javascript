@@ -58,7 +58,7 @@ const {
   hangmanGame,
   validateAndCorrectPhoneNumber,
   scrambledWordGame,
-  leetSpeak
+  convertToLeetSpeak
 } = require("./exercises/strings-operations/strings");
 
 const runExercisesStringsOperations = () => {
@@ -76,8 +76,17 @@ const runExercisesStringsOperations = () => {
   //hangmanGame(),
   //validateAndCorrectPhoneNumber(),
   //scrambledWordGame(),
-  leetSpeak()
+  //convertToLeetSpeak()
 };
 
+const {
+  gradeValidator
+} = require("./exercises/repetition-structure-01/repetition-structures-list");
+
+const runExercisesRepetitionStructureOperations = () => {
+  gradeValidator()
+}
+
 //runExercisesBasicOperations();
-runExercisesStringsOperations();
+//runExercisesStringsOperations();
+runExercisesRepetitionStructureOperations();
