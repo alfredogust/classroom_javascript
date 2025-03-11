@@ -94,8 +94,24 @@ const collectUserInfo = () => {
     console.log(userInfo);
 };
 
+const yearsToSurpassPopulation = () => {
+    let countryA = 80000; 
+    let countryB = 200000;
+    let year = 0
+
+    for (; countryA < countryB; year++) {
+        countryA = countryA * 1.03;
+        countryB = countryB * 1.015;
+    }
+
+    console.log(`It will take ${year} years for country A to surpass or equal the population of country B.`);
+
+    return year;
+};
+
 module.exports = {
     gradeValidator,
     userAndPasswordValidator,
-    collectUserInfo
+    collectUserInfo,
+    yearsToSurpassPopulation
 }
