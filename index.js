@@ -82,13 +82,15 @@ const runExercisesStringsOperations = () => {
 const {
   gradeValidator,
   userAndPasswordValidator,
-  collectUserInfo
+  collectUserInfo,
+  yearsToSurpassPopulation
 } = require("./exercises/repetition-structure-01/repetition-structures-list");
 
 const runExercisesRepetitionStructureOperations = () => {
   //gradeValidator(), 
   //userAndPasswordValidator(),
-  collectUserInfo()
+  //collectUserInfo()
+  yearsToSurpassPopulation()
 }
 
 //runExercisesBasicOperations();
