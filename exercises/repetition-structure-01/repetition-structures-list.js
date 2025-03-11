@@ -95,19 +95,64 @@ const collectUserInfo = () => {
 };
 
 const yearsToSurpassPopulation = () => {
-    let countryA = 80000; 
-    let countryB = 200000;
-    let year = 0
+    let repeat = true;
+    
+    while (repeat) {
+        let year = 0; // Counter for years
 
-    for (; countryA < countryB; year++) {
-        countryA = countryA * 1.03;
-        countryB = countryB * 1.015;
+        // Get valid population for country A
+        let countryA = parseInt(readlineSync.question("Enter the population of country A (1,000 - 1,000,000,000): "));
+        while (isNaN(countryA) || countryA < 1000 || countryA > 1000000000) {
+            console.log("Invalid input. Population must be between 1,000 and 1 billion.");
+            countryA = parseInt(readlineSync.question("Enter the population of country A: "));
+        }
+
+        // Get valid population for country B
+        let countryB = parseInt(readlineSync.question("Enter the population of country B (1,000 - 1,000,000,000): "));
+        while (isNaN(countryB) || countryB < 1000 || countryB > 1000000000) {
+            console.log("Invalid input. Population must be between 1,000 and 1 billion.");
+            countryB = parseInt(readlineSync.question("Enter the population of country B: "));
+        }
+
+        // Get valid growth rate for country A
+        let growthA = parseFloat(readlineSync.question("Enter the annual growth rate for country A (0.1 - 100%): "));
+        while (isNaN(growthA) || growthA <= 0 || growthA > 100) {
+            console.log("Invalid input. Growth rate must be between 0.1% and 100%.");
+            growthA = parseFloat(readlineSync.question("Enter the annual growth rate for country A: "));
+        }
+
+        // Get valid growth rate for country B
+        let growthB = parseFloat(readlineSync.question("Enter the annual growth rate for country B (0.1 - 100%): "));
+        while (isNaN(growthB) || growthB <= 0 || growthB > 100) {
+            console.log("Invalid input. Growth rate must be between 0.1% and 100%.");
+            growthB = parseFloat(readlineSync.question("Enter the annual growth rate for country B: "));
+        }
+
+        // Convert growth rates from percentage to decimal multiplier
+        growthA = 1 + (growthA / 100);
+        growthB = 1 + (growthB / 100);
+
+        // Check if country A already has a higher population than country B
+        if (countryA >= countryB) {
+            console.log("Country A already has a higher or equal population than Country B.");
+        } else {
+            // Loop until country A surpasses or equals country B
+            while (countryA < countryB) {
+                countryA *= growthA;
+                countryB *= growthB;
+                year++;
+            }
+            console.log(`It will take ${year} years for country A to surpass or equal the population of country B.`);
+        }
+
+        // Ask user if they want to repeat
+        let response = readlineSync.question("Do you want to perform another calculation? (yes/no): ").toLowerCase();
+        if (response !== "yes") {
+            repeat = false;
+        }
     }
-
-    console.log(`It will take ${year} years for country A to surpass or equal the population of country B.`);
-
-    return year;
 };
+
 
 module.exports = {
     gradeValidator,
