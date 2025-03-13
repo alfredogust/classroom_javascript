@@ -153,10 +153,20 @@ const yearsToSurpassPopulation = () => {
     }
 };
 
+const displayNumbersInColumn = () => {
+    let accumulateNumbers = "";
+
+    for (let number = 1;number <= 20; number++) {
+        accumulateNumbers += number + ' '; 
+    }
+
+    console.log(accumulateNumbers);
+};
 
 module.exports = {
     gradeValidator,
     userAndPasswordValidator,
     collectUserInfo,
-    yearsToSurpassPopulation
+    yearsToSurpassPopulation,
+    displayNumbersInColumn
 }
