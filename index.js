@@ -1,98 +1,49 @@
-// index.js - Centralizing the function calls for all exercises
+const readlineSync = require('readline-sync');
+const BasicOperationsExercises = require('./exercises/basicOperations/basicOperations');
 
-// Importing functions from the exercises file
-const {
-    helloWorld,
-    informedNumber,
-    sumTwoNumbers,
-    gradeAverage,
-    convertMetersToCentimeters,
-    circleRadius,
-    squareAreaAndDouble,
-    calculateSalary,
-    fahrenheitToCelsius,
-    celsiusToFahrenheit,
-    calculateThreeNumbers,
-    calculateIdealWeight,
-    getIdealWeightByGender,
-    calculateExcessWeight,
-    salaryDiscount, 
-    calculatePaintCost,
-    calculatePaintCosts,
-    calculateDownloadTime
-  } = require("./exercises/basic-operations/basic-operations");
+const basicOps = new BasicOperationsExercises();
 
-const runExercisesBasicOperations = () => {
-    console.log("Exercises in execution now:\n");
-
-    //helloWorld();
-    //informedNumber();
-    //sumTwoNumbers();
-    //gradeAverage();
-    //convertMetersToCentimeters();
-    //circleRadius();
-    //squareAreaAndDouble();
-    //calculateSalary();
-    //fahrenheitToCelsius();
-    //celsiusToFahrenheit();
-    //calculateThreeNumbers();
-    //calculateIdealWeight();
-    //getIdealWeightByGender();
-    //calculateExcessWeight();
-    //salaryDiscount();
-    //calculatePaintCost();
-    //calculatePaintCosts();
-    //calculateDownloadTime();
-};
-
-const {
-  sizeOfStrings,
-  reverseName,
-  verticalName,
-  invertedVerticalName,
-  getFullMonthName,
-  countSpacesAndVowels,
-  palindrome,
-  checkCpf,
-  numberToWords,
-  hangmanGame,
-  validateAndCorrectPhoneNumber,
-  scrambledWordGame,
-  convertToLeetSpeak
-} = require("./exercises/strings-operations/strings");
-
-const runExercisesStringsOperations = () => {
-  console.log("Exercises in execution now:\n");
-
-  //sizeOfStrings(),
-  //reverseName(),
-  //verticalName(),
-  //invertedVerticalName(),
-  //getFullMonthName(),
-  //countSpacesAndVowels(),
-  //palindrome(),
-  //checkCpf(),
-  //numberToWords,
-  //hangmanGame(),
-  //validateAndCorrectPhoneNumber(),
-  //scrambledWordGame(),
-  //convertToLeetSpeak()
-};
-
-const {
-  gradeValidator,
-  userAndPasswordValidator,
-  collectUserInfo,
-  yearsToSurpassPopulation
-} = require("./exercises/repetition-structure-01/repetition-structures-list");
-
-const runExercisesRepetitionStructureOperations = () => {
-  //gradeValidator(), 
-  //userAndPasswordValidator(),
-  //collectUserInfo()
-  yearsToSurpassPopulation()
+function showMenu() {
+  console.log('\n=== Exercise Menu ===');
+  console.log('1. Hello World');
+  console.log('2. Show a number entered by the user');
+  console.log('3. Show sum of two numbers');
+  console.log('4. Show the average of four requested grades: ');
+  console.log('0. Exit');
 }
 
-//runExercisesBasicOperations();
-//runExercisesStringsOperations();
-runExercisesRepetitionStructureOperations();
+function main() {
+  let exit = false;
+
+  while (!exit) {
+    showMenu();
+    const choice = parseInt(readlineSync.question('\nChoose an option: '));
+
+    console.log('\n--- Exercise Output ---');
+    switch (choice) {
+      case 1:
+        console.log(basicOps.helloWorld());
+        break;
+      case 2:
+        console.log(basicOps.showNumber());
+        break;
+      case 3:
+        console.log(basicOps.showSumOfTwoNumbers());
+      case 4:
+        console.log(basicOps.showGradeAverage());
+      case 0:
+        console.log('Goodbye...');
+        exit = true;
+        break;
+      default:
+        console.log('Invalid option. Try again. ');
+    }
+
+    if (!exit) {
+      readlineSync.question('\nPress Enter to return to the menu...');
+      console.clear();
+    }
+  }
+}
+
+main();
