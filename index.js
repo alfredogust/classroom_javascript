@@ -12,6 +12,7 @@ function showMenu() {
   console.log('5. Show the max number of two given numbers');
   console.log('6. FizzBuzz');
   console.log('7. Convert meters to centimeters');
+  console.log('8. Circle Area and Perimeter Calculation');
   console.log('0. Exit');
 }
 
@@ -32,14 +33,22 @@ function main() {
         break;
       case 3:
         console.log(basicOps.showSumOfTwoNumbers());
+        break;
       case 4:
         console.log(basicOps.showGradeAverage());
+        break;
       case 5:
         console.log(basicOps.showMaxNumber());
+        break;
       case 6:
         console.log(basicOps.fizzBuzz());
+        break;
       case 7:
         console.log(basicOps.convertMetersToCentimeters(600));
+        break;
+      case 8:
+        console.log(basicOps.showCircleAreaAndPerimeter());
+        break;
       case 0:
         console.log('Goodbye...');
         exit = true;
