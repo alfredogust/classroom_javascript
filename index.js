@@ -8,7 +8,10 @@ function showMenu() {
   console.log('1. Hello World');
   console.log('2. Show a number entered by the user');
   console.log('3. Show sum of two numbers');
-  console.log('4. Show the average of four requested grades: ');
+  console.log('4. Show the average of four requested grades');
+  console.log('5. Show the max number of two given numbers');
+  console.log('6. FizzBuzz');
+  console.log('7. Convert meters to centimeters');
   console.log('0. Exit');
 }
 
@@ -31,6 +34,12 @@ function main() {
         console.log(basicOps.showSumOfTwoNumbers());
       case 4:
         console.log(basicOps.showGradeAverage());
+      case 5:
+        console.log(basicOps.showMaxNumber());
+      case 6:
+        console.log(basicOps.fizzBuzz());
+      case 7:
+        console.log(basicOps.convertMetersToCentimeters(600));
       case 0:
         console.log('Goodbye...');
         exit = true;
