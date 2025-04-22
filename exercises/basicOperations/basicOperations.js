@@ -71,6 +71,19 @@ class BasicOperationsExercises {
     const centimeters = meters * 100;
     return `The result of the conversion is ${centimeters}`;
   }
+
+  showCircleAreaAndPerimeter() {
+    const radius = parseFloat(readlineSync.question('Enter the radius of the circle: '));
+
+    if (isNaN(radius) || radius <= 0) {
+      return 'Please enter a valid positive number for the radius.';
+    }
+
+    const area = Math.PI * (radius * radius);
+    const perimeter = 2 * Math.PI * radius;
+
+    return `Area: ${area.toFixed(2)}, Perimeter: ${perimeter.toFixed(2)}`;
+  }
 }
 
 module.exports = BasicOperationsExercises;
